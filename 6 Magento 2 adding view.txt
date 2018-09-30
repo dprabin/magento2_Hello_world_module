@@ -99,7 +99,19 @@ Step3: Create layout xml file
     - Page-specific content is associated with a page, using the action handle specific to the request.
     - Action handles is the combination of **route**, **ActionPath** and **action name** in lower case, separated by underscore (_) e.g. `route_actionpath_action.xml`
     - In our case it will be `prabhu_path_helloworld.xml`
+- Create directory structure `view\frontend\layout\` and create layout `prabhu_path_helloworld.xml` file inside that directory
 
+    <?xml version="1.0" ?>
+    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <body>
+            <referenceBlock name="content">
+                <block 
+                    template="blockContent.phtml"
+                    class="Prabhu\Hello\Block\Main"
+                    name="prabhu_hello_HelloWorld" />
+            </referenceBlock>
+        </body>
+    </page>
 
 
 
