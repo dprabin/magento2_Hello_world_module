@@ -74,6 +74,7 @@ Step3: Create layout xml file
 - We can find the layout XML file in this location: `app/code/[NameSpace]/[Module]/[area]/layout/*.xml`
 - Structure of Layout XML file
 
+    <?xml version="1.0" ?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
         <body>
             <referenceBlock name="content">
@@ -89,6 +90,16 @@ Step3: Create layout xml file
     - Class: Class of the block object
     - Template: Template of the block
     - Name: Unique name which globally identify the name of block
+
+- Layout Handles
+    - With layout handles or update handles **Magento** view **knows** which layout XML instructions to process for a given **request**.
+    - A **layout handle** is sort of like an event or notify for the **Page Layout System** certain handles **fire** on each page.
+    - In our case, we created controller `HelloWorld`. We have to tell magento to take this XML file as layout. Layout handle tells Magento which layout XML instructions to process for the given request
+- Page-specific action handles
+    - Page-specific content is associated with a page, using the action handle specific to the request.
+    - Action handles is the combination of **route**, **ActionPath** and **action name** in lower case, separated by underscore (_) e.g. `route_actionpath_action.xml`
+    - In our case it will be `prabhu_path_helloworld.xml`
+
 
 
 
