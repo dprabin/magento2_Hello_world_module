@@ -113,7 +113,12 @@ Step3: Create layout xml file
         </body>
     </page>
 
-
+Step 4
+------
+- Now its time to create **block** class, A block is a class that calls a **template** and provides data to htat template. Blocks often instantiate **models**, which then can query **databases**, and so on. But block is a complex topic.
+- Every block class extends a base class `Magento\Framework\View\Element\Template`. A block will render its **HTML** with its template properly. It is template property to **blockcontent.phtml**
+- Every block class must implement `_prepareLayout()` method. Specific method `_prepareLayout()` is executed when a block is created. It is often re-declared in a specific block and contains certain init operations.
+- Blocks are located inside `Blocks` folder of a module. In our case it will be `Prabhu/Hello/Block/BlockFile.php`
 
 
 
