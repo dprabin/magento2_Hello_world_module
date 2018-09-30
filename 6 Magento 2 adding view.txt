@@ -1,0 +1,71 @@
+Magento 2 adding view in magento 2
+==================================
+- Dependency injection is a way to retrieve objects. In this process, classes reeive objects they **depend** on as **constructor arguments**. In Magento 2, the **object manager** is responsible for creating all objects a class requires.
+
+    protected $resultPageFactory;
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+    ){
+        $this->resultPageFactory = $resultPageFactory;
+        parent::__construct($context);
+    }
+
+- **Dependency injection** (di) and **object manager** are complex topic.
+- Note: Please do not confuse **dependency injection** with **module decency** (which usually means a module is loaded after another module)
+
+
+
+Add view in a Module
+====================
+- Now our goal  is to render a string "Hello world" on a view page. So actually we are going to render **HTTP response**. In magento 2 its controller functionality tells system that "render HTTP response".
+
+Step 1
+------
+- As we know in controllers there is only one **entry point** which in `execute()` method. So in execute() method we need an instance of  `Magento\Framework\View\Result\PageFactory` class, because in magento 2 `PageFactory` is class which is responsible to create page. So here we will use **Dependency Injection**. Means we have to add `__construct()` method here, how will override the `__construct()` method of controller's base class.
+
+	<?php
+
+	namespace Prabhu\Hello\Controller\Path;
+
+	use Magento\Framework\App\Action\Action;
+	use Magento\Framework\App\ResponseInterface;
+	use Magento\Framework\App\Action\Context;
+	use Magento\Framework\View\Result\PageFactory;
+
+	class HelloWorld extends Action{
+
+	    /**
+	     * Override the parent constructor 
+	     * but call parent constructor from this constructor
+	     */
+	    protected $pagefactory;
+	    public function __construct(Context $context, PageFactory $pageFactory){
+	        $this->$pagefactory=$pageFactory;
+            parent::__construct($context);
+
+	    }
+
+		/**
+		 * Dispatch request
+		 * @return \Magento\Framework\Controller\ResultInterface\ResponseInterface
+		 * @throws \Magento\Framework\Exception\NotFoundException.
+		 */
+		public function execute(){
+			return $this->pagefactory->create();
+
+		}
+	}
+
+
+Step 2
+------
+- Due to the **overriding** of `__construct()` function. Now we need call to patient's __construct() function inside current controller's **construct()** to make sure proper working of **base** class.
+- So know we also have to inject `Magento\Framework\View\Result\PageFactory` class instance in our constructor due to the fact that base class's  __construct() takes this class's instance in its constructor.
+- 
+
+
+
+
+
+
