@@ -4,8 +4,19 @@ namespace Prabhu\Hello\Controller\Path;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
 
 class HelloWorld extends Action{
+
+	/**
+	 * HelloWorld constructor
+	 * /
+	protected $pageFactory;
+	public function __construct(Context $context, PageFactory $pageFactory){
+	    $this->pagefactory=$pageFactory;
+	    parent::__construct($context);
+	}
 
 	/**
 	 * Dispatch request
@@ -14,8 +25,7 @@ class HelloWorld extends Action{
 	 * @throws \Magento\Framework\Exception\NotFoundException.
 	 */
 	public function execute(){
-		//TODO: Implement execute() method
-		echo "Hello World";
+		return $this->pagefactory->create();
 
 	}
 }

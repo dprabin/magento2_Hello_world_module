@@ -62,7 +62,20 @@ Step 2
 ------
 - Due to the **overriding** of `__construct()` function. Now we need call to patient's __construct() function inside current controller's **construct()** to make sure proper working of **base** class.
 - So know we also have to inject `Magento\Framework\View\Result\PageFactory` class instance in our constructor due to the fact that base class's  __construct() takes this class's instance in its constructor.
-- 
+
+
+Step3: Create layout xml file
+-----------------------------
+- Now it is time to add **layout.xml** file in module. Layout XML is a tool to build pages of magento 2. Simply we can say that **Layout XML files** tells **Magento rendering system** which elements should be on a page (topology).
+-There are two main stages in working with the layout XML:
+    - Create the page content structure (create a logical page content structure)
+    - Render the structure (generate the HTML output)
+- The whole idea of the layout XML is to define the **logical** page **structure**. Once all the layout XML instructions from all the **modules** have been **processed**, the result is rendered and sent to the browser for display.
+- Location: `app/code/[NameSpace]/[Module]/[area]/layout/*.xml`
+
+
+
+
 
 
 
