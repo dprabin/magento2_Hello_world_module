@@ -2,7 +2,9 @@
 
 namespace Prabhu\Hello\Block;
 
-Class Main extends \Magento\Framework\View\Element\Template{
+use Magento\Framework\View\Element\Template
+
+Class Main extends Template{
 	public function _prepareLayout() {
 		/**/
 	}
