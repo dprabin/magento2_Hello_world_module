@@ -119,7 +119,25 @@ Step 4
 - Every block class extends a base class `Magento\Framework\View\Element\Template`. A block will render its **HTML** with its template properly. It is template property to **blockcontent.phtml**
 - Every block class must implement `_prepareLayout()` method. Specific method `_prepareLayout()` is executed when a block is created. It is often re-declared in a specific block and contains certain init operations.
 - Blocks are located inside `Block` folder of a module. In our case it will be `Prabhu/Hello/Block/BlockFile.php`
+- For our case, create file `Prabhu/Hello/Block/Main.php` and put following content inside that file
 
+    <?php
+
+	namespace Prabhu\Hello\Block;
+
+	use Magento\Framework\View\Element\Template
+
+	Class Main extends Template{
+		public function _prepareLayout() {
+			/* */
+		}
+	}
+
+- Now we need to create the template for that block. For this, we need to create a new `.phtml` file. 
+- For our case create a file `Prabhu/Hello/view/frontend/templates/blockContent.phtml` and put `<b>Hello World!</b>` in the file.
+
+
+- Now try to run url from browser. If there is any error, that might be because of old boilerplate files. So delete the directeor `var/generation/Hello` folder and reload. It will work.
 
 
 
