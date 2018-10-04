@@ -100,7 +100,9 @@ Generation of file in pub directory.
         <item ...></item>
     </argument>
 
+- This will create symlink instead of copying whole file in linux platform. In windows platform, it will generate error  if not run with administrator previllege. so revert that to copy
 - Now clean the cache
+- the directory `var/generation` contains boilerplate classes. 
 
 
 
