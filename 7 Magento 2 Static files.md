@@ -53,3 +53,16 @@ How to add a static file in magento 2
                     - hello.js
                         - `alert("Hello World")`
 
+- Now it is time to add a link (http/https) of created file in four Magento module.
+	- first of all, like a typical html page lets try to add head section in our page, open related layout xml file. i.e. `layout/prabhu/prabhu_path_helloworld.xml`. and add head section
+	- In case of js file <link src="<namespace_module>::<folder>/<file>.js" />
+	    - <namespace_module> -> name of vendor and module separated by underscore "_". -> Prabhu_HelloWorld
+	    - <folder>: name of any folder if exist which contains static file -> js, or css or any other
+	    - <file>: Name of file
+    - In case of css use css tag instead of link -> <css src="<namespace_module>::<folder>/<file>.css">
+
+
+
+
+
+
