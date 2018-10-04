@@ -81,8 +81,14 @@ Generation of file in pub directory.
 
 - With this, we can find the location of a module's static file inside pub directory. So location of static file will be
 	- `<magento root>/pub/static/<area>/<theme's namespace>/<theme name>/internationalization/<module's Namespace_module>/<any direcotry containing asset>/file.*`
-- Static files of themes and generation will be covered in later videos.
 
+- Magento (all modes) take static content from different themes and odules and place them inside pub directory to make them public and accessible in browser. In magento 2 there are two assets materalization trategies
+    - copy
+    - symlink or symbolic link
+- the first strategy is copy. It takes files from source and make a duplicate of them in pub folder
+- Second strategy is Symlink, which is similar to shortcut in windows. It takes a file from source and create a soft link of that inside pub direcotyr
+- Magento framework class: `Magento\Framework\App\StaticResource` is responsible to generate static files.
+    - Asset materialization strategy can be defined in global configuration file `app/etc/di.xml` by setting the arguments of mentioned glass
 
 
 
