@@ -90,8 +90,17 @@ Generation of file in pub directory.
 - Magento framework class: `Magento\Framework\App\StaticResource` is responsible to generate static files.
     - Asset materialization strategy can be defined in global configuration file `app/etc/di.xml` by setting the arguments of mentioned glass
 
+- Let's look at materalization strategy. Go to `app/etc/di.xml`
+- find `argument name=materalizationStrategyFactory` or 
+- `<item name=viewpreprocessed xsi:type="object"> Magento\Framework\App\View\Asset\MaterializationStrategy\Copy </item>`
+- 
 
+    <argument name="strategiesList" xsi:type="array">
+    	<item name=viewpreprocessed xsi:type="object"> Magento\Framework\App\View\Asset\MaterializationStrategy\Symlink</item>
+        <item ...></item>
+    </argument>
 
+- Now clean the cache
 
 
 
