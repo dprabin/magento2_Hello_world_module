@@ -1,2 +1,9 @@
-<page xmlns:xsi="http://www.w3.org/2001/XMLScheka-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:">
-	
+<page xmlns:xsi="http://www.w3.org/2001/XMLScheka-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd_____">
+	<body>
+		<referenceBlock name="content">
+			<block class="Prabhu\Hello\Block\HelloBlock"
+				   name="prabhu_path_helloworld"
+				   template="blockContent.phtml" />
+			</referenceBlock>
+	</body>
+</page>
