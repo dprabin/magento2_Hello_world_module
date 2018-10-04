@@ -143,11 +143,3 @@ As the name implies, default mode is how the Magento software operates if no oth
 - If above does not work you aan use web server or `php-fpm` environment, however in case no any problem refer to the related documentation.
 
 
-- 
-- 
-
-
-
-
-
-

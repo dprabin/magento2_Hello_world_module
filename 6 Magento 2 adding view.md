@@ -139,7 +139,28 @@ Step 4
 
 - Now try to run url from browser. If there is any error, that might be because of old boilerplate files. So delete the directeor `var/generation/Hello` folder and reload. It will work.
 
+- if the change does not reflect, you need to clear the cache.
 
+    php bin/magento cache:clean
+
+- It will take some time to regenrerate cache the next time your site is loaded
+- If you want to disable only the full page cache, you can do
+
+    php bin/magento cache:disable full_page
+
+- If you are working with layout files, it is good to disable layout cache  also for some time.
+
+
+
+Step 5
+------
+- Now in this step, we have to create a **template** (.phtml) file. Templates are snippets of phtml code that contain PHP elements, such as instructions, variables, and calls for class methods.
+- Location: template files are located inside view folder of a module. e.g. 
+
+    <Namespae dir>/<Module dir>/view/<area>/file.phtml
+
+- In our case, it will be `Prabhu/Hello/view/view/blockContent.phtml`
+   
 
 
 
