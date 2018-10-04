@@ -66,11 +66,36 @@ How to add a static file in magento 2
 Generation of file in pub directory. 
 ----
 - In page source you can see the http or https link of our static file. The link of our file is something like that
-    - http://localhost/ecomsite.com/pub/static/version34234/frontend/Magento/luma/en_US/Funky_Hello/js/funky.js
+    - http://localhost/ecomsite.com/pub/static/version34234/frontend/Magento/luma/en_US/Prabhu_Hello/js/funky.js
 - Now lets try to take a deeper link on this file's URL.
 - Pub is the main public directory
 - ecomsite.com is the magento installation root directory
 - static: is a sub directory inside pub where all static assets can be taken from themes and modules, so they can serve on browser via http
+- versionxxxxxx is not actually a sub directory. It is current deployed version of generated file.
+- frontend: is a directory that contain assets related to front side, adminhtml contains assets related to console.
+- Magento is the name of active theme's vendor or namespace
+- luma: name of the active theme
+- en_US: contains english US version of assets, as magento supports internationalization
+- Prabhu_Hello: is namespace_module
+- js/hello.js: is subdirectory js with asset hello.js file
+
+- With this, we can find the location of a module's static file inside pub directory. So location of static file will be
+	- `<magento root>/pub/static/<area>/<theme's namespace>/<theme name>/internationalization/<module's Namespace_module>/<any direcotry containing asset>/file.*`
+- Static files of themes and generation will be covered in later videos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
