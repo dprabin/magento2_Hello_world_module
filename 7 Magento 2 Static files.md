@@ -40,5 +40,16 @@ How to add a static file in magento 2
             - layout
             - template
 - let's add a new directory in view directory
-
+    - Module
+        - view
+            - layout
+            - template
+            - web
+                - css
+                    - hello.css
+                        - `b{ font-size:60px;`
+                        - `    color: #336699;}`
+                - js
+                    - hello.js
+                        - `alert("Hello World")`
 
