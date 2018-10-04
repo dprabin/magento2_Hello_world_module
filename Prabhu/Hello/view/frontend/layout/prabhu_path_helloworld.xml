@@ -1,4 +1,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLScheka-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd_____">
+	<head>
+		<link src="Prabhu_Hello::js/hello.js" />
+		<css src="Prabhu_Hello::css/hello.css" />
+	</head>
 	<body>
 		<referenceBlock name="content">
 			<block class="Prabhu\Hello\Block\HelloBlock"
