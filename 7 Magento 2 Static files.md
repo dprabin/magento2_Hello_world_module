@@ -60,6 +60,18 @@ How to add a static file in magento 2
 	    - <folder> = name of any folder if exist which contains static file - js, or css or any other
 	    - <file> = Name of file
     - In case of css use css tag instead of link - <css src="<namespace_module>::<folder>/<file>.css">
+- Clean cache: `php bin/magento cache:clean`
+- These files go into pub directory in magento folder
+
+Generation of file in pub directory. 
+----
+- In page source you can see the http or https link of our static file. The link of our file is something like that
+    - http://localhost/ecomsite.com/pub/static/version34234/frontend/Magento/luma/en_US/Funky_Hello/js/funky.js
+- Now lets try to take a deeper link on this file's URL.
+- Pub is the main public directory
+- ecomsite.com is the magento installation root directory
+- static: is a sub directory inside pub where all static assets can be taken from themes and modules, so they can serve on browser via http
+
 
 
 
