@@ -105,19 +105,3 @@ Generation of file in pub directory.
 - the directory `var/generation` contains boilerplate classes. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
