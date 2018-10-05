@@ -24,17 +24,22 @@ Possible file structure of a Module folder
 - registration.php *
 - composer.json
 
-Among these, only etc foleder and registration.php files are required. All other files or folders are optional and depend upon the functionality or business logic of a module. It is not very strict in structure; a developer can create any other folder as per need.
+Among these, only `etc` folder and `registration.php` files are required. All other files or folders are optional and depend upon the functionality or business logic of a module. It is not very strict in structure; a developer can create any other folder as per need.
+
+---
+
+## Step 1
+
+- In Magento 2, modules are grouped by vendors. So first of all 
+    - create a **vendor or namespace** folder inside `app/code` and then 
+    - inside it create a **module** folder. Regardless of your installation type.
+- In our case, we will create Hello module inside the vendor Prabhu
+    - Prabhu
+        - Hello
 
 
+## Step 2
 
-Step 1
-======
-- In Magento 2, modules are grouped by vendors. So first of all create a **vendor or namespace** folder inside `app/code` and then inside it create a **module** folder. Regardless of your installation type.
-
-
-Step 2
-======
 - In magento 2, modules are named <Vendor>_<Module>. Module names are case sensitive
     - For an example **Magento_Catalog**.
 	    - Magento = vendor name or namespace
@@ -80,8 +85,8 @@ Step 2
 - We don't have any dependencies for our module, so there is no sequence node.
 
 
-Step 3
-======
+## Step 3
+
 - Create `registration.php` file inside module's folder. It contains instructions on how to find a module.
 - Following is the pattern of `registration.php` file
 
@@ -90,8 +95,8 @@ Step 3
 - The only thing you have to change here is the module name.
 
 
-Step 4
-======
+## Step 4
+
 - Now we have to write `controller` or  `action` class. Controller is the part of "MVC" design pattern. But here, its functionality is different because Magento do not follow or implement standard MVC.
 - Controllers live inside `Controller` directory of a module e.g.
     - `<Module>/Controller/<ActionPath>/ControllerClass`
@@ -125,8 +130,8 @@ Step 4
     } 
 
 
-Step 5
-=====
+## Step 5
+
 - Now you have to set up a `url route` for your module. So to define a route for your module, you have to create `route.xml` (Which is a configuration file so it will live inside etc folder) here we are going to define route for frontend `area` so `routes.xml` will be located in frontend subfolder. E.g. `Prabhu/etc/frontend/routes.xml`
 - routes.xml file demonstrate three things
     - id of the router
@@ -148,27 +153,23 @@ Step 5
 - Every URL that starts with prabhu, this module will handle that link
 
 
+## Step 8
 
-
-Step 8
-======
 - Enable the module via command prompt
     - use `php bin.magento module:status` to check the status of all module which are installed in the system
     - use `php bin/magento module:enable:Prabhu_Hello` to enable your module
 - You can also use admin panel to enable modules
 
 
+## Step 9
 
-Step 9
-======
 - Run command `php bin/magento setup:upgrade`
 - You have to run this to upgrade your module version in magento's database schema.
 - Database table `setup_module` contains all information about all modules and their status
 
 
+## Step 10
 
-Step 10
-=======
 - Run/test your module
 - In Magento 2 an url composed of `<magento dir>/frontName/actionPath/Action`
 - So in our case, to test the module, type following in addressbar
@@ -179,8 +180,3 @@ Step 10
     - path: ActionPath connected to the Controller folder
     - helloWorld: php class of action or controller
 - We have to write view component for displaying proper output 
-
-
-
-
-
