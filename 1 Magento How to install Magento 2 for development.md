@@ -217,16 +217,21 @@ Go to System > Cache management, then select the cache types and click refresh, 
 Delete the files inside `var/cache/` directory
 
 ---
+---
+---
 
-## Development Modes in Magento 2
+Development Modes in Magento 2
+=================================
 There are **three primary development** modes available in Magento 2. One of the biggest differences between the modes is how **static view files** get served. Static view files are CSS files, JavaScript, and images from modules that have to be processed before they can be delivered to a browser.
 - Developmer
 - Production
 - Default
 - There is also a **maintenance** mode, but that operates in a different way. Only to prevent access to the system, while updating or upgrading software
 
+---
 
-### Developer Mode
+Developer Mode
+-----------------
 You should use the Developer mode while develipment
 - The main benefit to this mode is that error messages are visible to you.
 - In this mode, static view files are generated every time they are requested. They are written to the `pub/static` directory.
@@ -234,15 +239,21 @@ You should use the Developer mode while develipment
 - Uncaught exceptions are displayed in the browser, rather than being logged. An exception is thrown whenever an event subscriber cannot be invoked.
 - System logging in var/report is highly detailed in this mode.
 
+---
 
-### Production Mode
+Production Mode
+------------------
+
 - You should run magento in Production mode once it is deployed to a production server
 - Production mode provides the highest performance in Magento 2. THe most important aspect of this mode is that errors are logged to the file system **var/log ** and are never displayed to the user.
 - In this mode, **Static view files** are not created on the fly when they are requested. instead, they have to be deployed to the **pub/static** directory using the command-line tool. The generated pages will contain direct links to the deployed page resources
 - Any changes to view files require running the deploy tool again
 
+---
 
-### Default mode
+Default mode
+-------------
+
 As the name implies, default mode is how the Magento software operates if no other mode is specified
 - In this mode, errors are logged to files in `var/reports` and are never shown to the user. Static view files are materialized on the fly and then cached.
 - In contrast to the developer mode, view file changes are not visible until the generated static view files are cleared
@@ -254,13 +265,17 @@ As the name implies, default mode is how the Magento software operates if no oth
 | Production |   |   | * |   |
 | Default    | * |   | * | * |
 
-### Switch development modes
+---
+
+## Switch development modes
+
 - If you have private server environment the easiest way to switch between different development modes is via command-line
 - You can view current mode via command:
     - `php bin/magento deploy: nide:show`
 - You can switch between modes via command:
     - `php bin/magento deploy:mode:set {mode}` 
 - Note: You cannot currently change from either Developer or production mode to default
+
 
 - In other cases there are 2 ways
 - Use the system environment variable MAGE_MODE in .htaccess file such as: `SetEnv MAGE_MODE=[developer|default|production]`
