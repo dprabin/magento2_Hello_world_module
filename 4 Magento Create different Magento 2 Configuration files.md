@@ -21,7 +21,7 @@ app/code/Magento/Namespace/ExtensionName
 
 	\Magento\Framework\Component\ComponentRegistrar::register(\Magento\Framework\Component\ComponentRegistrar::MODULE,'Namespace_ExtensionName', __DIR__);
 
-
+---
 
 ## ExtensionName/etc/module.xml
 
@@ -30,6 +30,7 @@ app/code/Magento/Namespace/ExtensionName
 	    <module name="Namespace_ExtensionName" setup_version="0.0.1">
 	</config>
 
+---
 
 ## Create a New Module named test
 - Create the new directory structure
@@ -41,7 +42,6 @@ app/code/Magento/Namespace/ExtensionName
 - Create `Test/registration.php` file inside `Prabin/`
 
 	<?php
-	*/ Copyright Author name */
 
 	\Magento\Framework\Component\ComponentRegistrar::register(\Magento\Framework\Component\ComponentRegistrar::MODULE,'Prabin_Test', __DIR__);
 

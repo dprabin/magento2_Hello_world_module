@@ -101,27 +101,28 @@ Step 4
 - The Controller directory and ActionPath directory start with uppercase while etc start with lowercase
 - Lets create a new file inside this. The name of our controller will be `HelloWorld.php`.
 
-<?php
+    <?php
 
-namespace Prabhu\Hello\Controller\Path;
+    namespace Prabhu\Hello\Controller\Path;
 
-use Magento\Framework\App\Action\Action;
-use Magento\Framework\App\ResponseInterface;
+    use Magento\Framework\App\Action\Action;
+    use Magento\Framework\App\ResponseInterface;
 
-class HelloWorld extends Action{
+    class HelloWorld extends Action{
 
-	/**
-	 * Dispatch request
-	 *
-	 * @return \Magento\Framework\Controller\ResultInterface\ResponseInterface
-	 * @throws \Magento\Framework\Exception\NotFoundException.
-	 */
-	public function execute(){
-		//TODO: Implement execute() method
-		echo "Hello World";
+    	/**
+    	 * Dispatch request
+    	 *
+    	 * @return \Magento\Framework\Controller\ResultInterface\ResponseInterface
+    	 * @throws \Magento\Framework\Exception\NotFoundException
+    	 */
 
-	}
-} 
+    	public function execute(){
+    		//TODO: Implement execute() method
+    		echo "Hello World";
+
+    	}
+    } 
 
 
 Step 5
