@@ -9,6 +9,8 @@ Command Line Interface and Command line tool
     - Deploy static view files; Clear static files (to comply with static file fallback rules)
 - Location: <Magento installation dir>/bin/magento
 
+---
+
 ## To run the command line
 
 - Open terminal or cmd in windows
@@ -27,6 +29,8 @@ Command Line Interface and Command line tool
 - Sample Data
     - `bin/magento sampledata:deploy`
     - `bin/magento setup:upgrade`
+
+---
 
 ## Cache management
 A file on a local hard drive which contains temporary information that a program sets aside because it assumes you'll want to use it soon. Doing this allows the software to load the information faster than it would take to find the original data.
@@ -90,9 +94,8 @@ Go to System > Cache management, then select the cache types and click refresh, 
 
 #### By manually removing the cache directory
 Delete the files inside `var/cache/` directory
-- 
-- 
 
+---
 
 ## Development Modes in Magento 2
 There are **three primary development** modes available in Magento 2. One of the biggest differences between the modes is how **static view files** get served. Static view files are CSS files, JavaScript, and images from modules that have to be processed before they can be delivered to a browser.
@@ -141,5 +144,3 @@ As the name implies, default mode is how the Magento software operates if no oth
 - In other cases there are 2 ways
 - Use the system environment variable MAGE_MODE in .htaccess file such as: `SetEnv MAGE_MODE=[developer|default|production]`
 - If above does not work you aan use web server or `php-fpm` environment, however in case no any problem refer to the related documentation.
-
-

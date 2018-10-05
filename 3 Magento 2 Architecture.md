@@ -118,12 +118,12 @@ High level elements of magento
 ------------------------------
 These are high-level elements of Magento with which every developer will interact.
 - Configuration
-	- Location: `app/etc/`
-	- Description: Configuration refers to the general configuration for an instance. It is not the same as module configuration. General configuration defines which modules are available, The database credentials, and more. Module-specific configuration defines the behavior of a module
-	- There is local configuration located in each module folder, and global configuration at `app/etc/`
-	- e.g. `app/etc/config.php` which contains configurations about which modules are available, activated, deactivated
-	- `app/etc/env.php` contains all information about database connection, 
-	- `app/etc/di.xml` contains information about dependency injection.
+  	- Location: `app/etc/`
+	  - Description: Configuration refers to the general configuration for an instance. It is not the same as module configuration. General configuration defines which modules are available, The database credentials, and more. Module-specific configuration defines the behavior of a module
+	  - There is local configuration located in each module folder, and global configuration at `app/etc/`
+	  - e.g. `app/etc/config.php` which contains configurations about which modules are available, activated, deactivated
+  	- `app/etc/env.php` contains all information about database connection, 
+	  - `app/etc/di.xml` contains information about dependency injection.
 - Framework
     - Location: `lib/internal/Magento/Framework` or
     - `vendor/magento/framework`
