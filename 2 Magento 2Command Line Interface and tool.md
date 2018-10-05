@@ -139,7 +139,7 @@ As the name implies, default mode is how the Magento software operates if no oth
 - Note: You cannot currently change from either Developer or production mode to default
 
 - In other cases there are 2 ways
-- Use the system environment variable MAGE_MODE in .htaccess file such as: `SetEnv `\MAGE_MODE=[developer|default|production]`
+- Use the system environment variable MAGE_MODE in .htaccess file such as: `SetEnv MAGE_MODE=[developer|default|production]`
 - If above does not work you aan use web server or `php-fpm` environment, however in case no any problem refer to the related documentation.
 
 

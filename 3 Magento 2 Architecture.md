@@ -9,9 +9,10 @@ Magento 2 Architecture
 6. Object Instantiation "magic"
 7. Events and plugins
 
+---
 
-Magento 2 Modular System
-------------------------
+Magento 2 is a Modular System
+-----------------------------
 - Magento 2 is a **modular** system. It means that in magento 2, every functionality or business logic is designed and developed in form of **modules**. It provides more independency. Every module can work as an stand alone unit and it has minimum dependencies of other modules.
 - A module is basically a package that encapsulate a business feature or a set of features.
     - Magento 2 modules are smaller and the functionality is grouped in a more logical manner (for example, if you are looking for a checkout code, you only have to look in checkout folder and nowhere else)
@@ -20,6 +21,7 @@ Magento 2 Modular System
         - `vendor/vendor-composer-namespace/<module_name>`
     - With modules developers can define new business features, or customizations to existing ones, they can also define a default user interface for those features, which are customizable by theme
 
+---
 
 Areas in Magento2
 -----------------
@@ -34,8 +36,16 @@ An area is a scope in the configuration that allows:
     - REST web api
     - SOUP web api
 - Developers will primarily interact with only two areas **Adminhtml** and frontend
-- E.g. Let us take an example of catalog folder- There is a user who wants to know details about the prodocts. the etc inside the catalog folder contains all configuration relatid field. This contains subfolders like adminhtml, frontend, webapi_rest, webapi_soap etc. All the files related to frontend is located inside frontend folder. These config files are loaded when the user request to see products from frontend. Other files are not loaded. So this will make input file 
+- E.g. Let us take an example of catalog folder 
+    - There is a user who wants to know details about the prodocts. 
+    - The etc inside the `catalog` folder contains all configuration related fields. 
+    - This contains subfolders like `adminhtml`, `frontend`, `webapi_rest`, `webapi_soap` etc. 
+    - All the files related to frontend is located inside `frontend` folder. 
+    - These config files are loaded when the user requests to see products from frontend. 
+    - Other files are not loaded. So this will make input file 
 - A module can contain files for one or more of the areas
+
+---
 
 Theme in Magento 2
 ------------------
@@ -47,7 +57,7 @@ Theme in Magento 2
 - It is important to understand that while `PHP` code is mostly located in modules, `generic` static assets are organized in themes
 - The components that are related to all modules are located in theme folder, which can be accessed by all modules. The components that are module specific, they are stored in view folder inside the modules directory.
 
-
+---
 
 Layout files in Magento 2
 -------------------------
@@ -79,6 +89,7 @@ Layout files in Magento 2
       </body>
     </page>
 
+---
 
 Merged config files in Magento 2
 --------------------------------
@@ -86,11 +97,13 @@ Merged config files in Magento 2
 - Those files are distibruted across different modules. Each module can have its own set of standard config files
 - When a certain type of information is requested by an application (like a list of available routes), Magento merges all config files of a certain type (example: `routes.xml`) and derives information from there.
 
+---
 
 Object Initiation **Magic** in magento 2
 ----------------------------
 - Object initiation `magic` or dependency injection (DI), is a Magento 2 feature. When you need a new object, you declare it (or its interface) in the constructor, and magento will deliver an instance
 
+---
 
 Events and plugins
 ------------------
@@ -99,6 +112,7 @@ Events and plugins
 - Plugin technology allows developers to add specific behavior to every public method of each class. This is very powerful tool.
 - For an example if you want to add behaviour in function, you can change its parameter or change its return type with plugins
 
+---
 
 High level elements of magento
 ------------------------------
@@ -117,6 +131,3 @@ These are high-level elements of Magento with which every developer will interac
 - Dev
     - Location: `dev/`
     - Description: Dev tools include scripts and tools that assist a magento developer (for an example, a testing framework would be located here)
-
-
-
